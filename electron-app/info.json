@@ -1,0 +1,56 @@
+{
+  "pixelFormat": "bgra",
+  "codedSize": {
+    "width": 192,
+    "height": 192
+  },
+  "visibleRect": {
+    "x": 0,
+    "y": 0,
+    "width": 192,
+    "height": 192
+  },
+  "contentRect": {
+    "x": 0,
+    "y": 0,
+    "width": 192,
+    "height": 192
+  },
+  "timestamp": 0,
+  "colorSpace": {
+    "primaries": "bt709",
+    "transfer": "srgb",
+    "matrix": "rgb",
+    "range": "full"
+  },
+  "widgetType": "frame",
+  "metadata": {
+    "captureUpdateRect": {
+      "x": 0,
+      "y": 0,
+      "width": 192,
+      "height": 192
+    },
+    "regionCaptureRect": null,
+    "sourceSize": {
+      "width": 192,
+      "height": 192
+    },
+    "frameCount": 0
+  },
+  "handle": {
+    "ntHandle": {
+      "type": "Buffer",
+      "data": [
+        56,
+        16,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  }
+}

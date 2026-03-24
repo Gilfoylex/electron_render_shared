@@ -1,6 +1,7 @@
 const { app, BrowserWindow, sharedTexture, ipcMain } = require("electron");
 const path = require('node:path');
 const crypto = require('node:crypto')
+const win_api = require('./build/Debug/win_api')
 
 const capturedTextures = new Map();
 
@@ -29,28 +30,27 @@ const createWindow = () => {
     //const texture = event.texture;
     //console.log(JSON.stringify(texture.textureInfo, null, 2));
 
-    const handleValue = 0x0000000040004642n; // 必须用 BigInt
+    //const handleValue = 0x0000000040004642n; // 必须用 BigInt
 
-    const ntHandle = Buffer.alloc(8);
-    ntHandle.writeBigUInt64LE(handleValue);
+    const ntHandle = win_api.getDuplicateHandle();
 
     const mytextureinfo = {
       pixelFormat: 'bgra',
       codedSize: {
-        width: 192,
-        height: 192
+        width: 128,
+        height: 128
       },
       visibleRect: {
         x: 0,
         y: 0,
-        width: 192,
-        height: 192
+        width: 128,
+        height: 128
       },
       contentRect: {
         x: 0,
         y: 0,
-        width: 192,
-        height: 192
+        width: 128,
+        height: 128
       },
       timestamp: 0,
       colorSpace: {
@@ -64,13 +64,13 @@ const createWindow = () => {
         captureUpdateRect: {
           x: 0,
           y: 0,
-          width: 192,
-          height: 192
+          width: 128,
+          height: 128
         },
         regionCaptureRect: null,
         sourceSize: {
-          width: 192,
-          height: 192
+          width: 128,
+          height: 128
         },
         frameCount: 0
       },
@@ -78,6 +78,9 @@ const createWindow = () => {
         ntHandle: ntHandle
       }
     };
+
+    // Step 1: Input source of shared texture handle.
+    //const texture = event.texture;
 
     const texture = {
       textureInfo: mytextureinfo

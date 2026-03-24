@@ -9,9 +9,14 @@
   "scripts": {
     "start": "electron .",
     "debug": "electron --inspect=5858 .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "node-gyp -j 8 rebuild --debug",
+    "createSln": "npx node-gyp configure --msvc_version=2022" 
   },
   "devDependencies": {
     "electron": "^41.0.3"
+  },
+  "dependencies": {
+    "node-addon-api": "^8.6.0"
   }
 }

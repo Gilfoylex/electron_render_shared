@@ -18,8 +18,8 @@ ID3D11Texture2D* g_pSharedTexture = nullptr;
 HANDLE g_SharedHandle = nullptr;
 
 // 窗口尺寸
-const UINT WIDTH = 400;
-const UINT HEIGHT = 400;
+const UINT WIDTH = 128;
+const UINT HEIGHT = 128;
 
 // 窗口过程
 LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
